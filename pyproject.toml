@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "navvis-dataset-explorer"
+version = "1.0.0"
+description = "Scan NavVis datasets on drives and NAS shares and create an offline HTML dashboard"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+
+[project.scripts]
+navvis-dataset-explorer = "navvis_dataset_explorer.cli:main"
+
+[tool.setuptools.package-data]
+navvis_dataset_explorer = ["dashboard.html"]
+
+[tool.setuptools.packages.find]
+include = ["navvis_dataset_explorer*"]
